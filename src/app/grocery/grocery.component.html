@@ -1,0 +1,37 @@
+<h1>grocery list</h1>
+<table id="customers">
+    <tr>
+        <th>item name</th>
+        <th>Quantity</th>
+        <th>photourl</th>
+        <th>action</th>
+    </tr>
+    
+    <tr>
+        <td> <input type="text" placeholder="add items" name="itemname" [(ngModel)]="itemname"></td>
+        <td> <input type="number" placeholder="add items" name="Quantity" [(ngModel)]="Quantity"></td>
+        <td> <input type="text" placeholder="add items" name="photourl" [(ngModel)]="photourl"></td>
+        <td><button (click)="addItem()">add</button></td>
+    </tr>
+</table>
+<table cellpadding="0" cellspacing="0" ng-show="IsVisible" id="customers">
+    <tr>
+        <th>item name</th>
+        <th>Quantity</th>
+        <th>photourl</th>
+        <th>action</th>
+        <th>action</th>
+    </tr>
+    
+    <tbody *ngFor="let i of Grocery" >
+        <tr >
+            <td>{{i.itemname}}</td>
+            <td>{{i.Quantity}}</td>
+            <td>{{i.photourl}}</td>
+            <td><button (click)="view(i)" >view</button></td>
+            <td><button (click)="remove(i)">remove</button></td>
+        </tr>
+    </tbody>
+</table>
+
+
